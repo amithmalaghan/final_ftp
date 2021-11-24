@@ -2,6 +2,7 @@
 
 
 #create mysql docker file
+
 FROM mysql:5.7
 ENV MYSQL_ROOT_PASSWORD: PASS
 EXPOSE 3306
@@ -26,7 +27,9 @@ CREATE TABLE IF NOT EXISTS `ftpgroup` (
   `gid` smallint(6) NOT NULL DEFAULT '5500',
   `members` varchar(16) COLLATE utf8_general_ci NOT NULL,
   KEY `groupname` (`groupname`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='proftpd group table';CREATE TABLE IF NOT EXISTS `ftpuser` (
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='proftpd group table';
+
+CREATE TABLE IF NOT EXISTS `ftpuser` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `userid` varchar(32) COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `passwd` varchar(32) COLLATE utf8_general_ci NOT NULL DEFAULT '',
